@@ -194,7 +194,7 @@ Click "File Save"
 
 `Polis-cli masternode status`
 
-*You should see ***status 4***
+*You should see ***status 9***
 
 If you do, congratulations! You have now setup a masternode. If you do not, please contact support and they will assist you.  
 ***
