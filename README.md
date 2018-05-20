@@ -1,4 +1,4 @@
-![Coin-Logo](https://i.imgur.com/sbKgx8p.png)
+![Coin-Logo](https://i.imgur.com/FrsQHep.png)
 # Polis Masternode Setup Guide (Ubuntu 16.04)
 This guide will assist you in setting up a Polis Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
 
