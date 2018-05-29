@@ -27,8 +27,6 @@ purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
     #kill wallet daemon
     sudo killall azartd > /dev/null 2>&1
-    #remove old ufw port allow
-    sudo ufw delete allow 24126/tcp > /dev/null 2>&1
     #remove old files
     if [ -d "~/.azartcore" ]; then
         sudo rm -rf ~/.azartcore > /dev/null 2>&1
