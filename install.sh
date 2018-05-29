@@ -1,16 +1,16 @@
 #!/bin/bash
 
 TMP_FOLDER=$(mktemp -d)
-CONFIG_FILE='polis.conf'
-CONFIGFOLDER='/root/.poliscore'
-COIN_DAEMON='/usr/local/bin/polisd'
-COIN_CLI='/usr/local/bin/polis-cli'
-COIN_REPO='https://github.com/polispay/polis/releases/download/v1.3.0/poliscore-1.3.0-x86_64-linux-gnu.tar.gz'
+CONFIG_FILE='azart.conf'
+CONFIGFOLDER='/root/.azartcore'
+COIN_DAEMON='/usr/local/bin/azartd'
+COIN_CLI='/usr/local/bin/azart-cli'
+COIN_REPO='https://github.com/azartpay/azart/releases/download/0.12.3.2/azart-0.12.3.2-linux-x64.tgz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
-SENTINEL_REPO='https://github.com/polispay/sentinel'
-COIN_NAME='Polis'
-COIN_PORT=24126
-RPC_PORT=24127
+SENTINEL_REPO='https://github.com/azartpay/azart-sentinel'
+COIN_NAME='Azart'
+COIN_PORT=9799
+RPC_PORT=9798
 
 NODEIP=$(curl -s4 icanhazip.com)
 
@@ -26,15 +26,15 @@ MAG='\e[1;35m'
 purgeOldInstallation() {
     echo -e "${GREEN}Searching and removing old $COIN_NAME files and configurations${NC}"
     #kill wallet daemon
-    sudo killall polisd > /dev/null 2>&1
+    sudo killall azartd > /dev/null 2>&1
     #remove old ufw port allow
     sudo ufw delete allow 24126/tcp > /dev/null 2>&1
     #remove old files
-    if [ -d "~/.poliscore" ]; then
-        sudo rm -rf ~/.poliscore > /dev/null 2>&1
+    if [ -d "~/.azartcore" ]; then
+        sudo rm -rf ~/.azartcore > /dev/null 2>&1
     fi
-    #remove binaries and Polis utilities
-    cd /usr/local/bin && sudo rm polis-cli polis-tx polisd > /dev/null 2>&1 && cd
+    #remove binaries and Azart utilities
+    cd /usr/local/bin && sudo rm azart-cli azart-tx azartd > /dev/null 2>&1 && cd
     echo -e "${GREEN}* Done${NONE}";
 }
 
@@ -59,7 +59,7 @@ function download_node() {
   COIN_ZIP=$(echo $COIN_REPO | awk -F'/' '{print $NF}')
   tar xvzf $COIN_ZIP --strip 1 >/dev/null 2>&1
   compile_error
-  cp bin/polis* /usr/local/bin
+  cp bin/azart* /usr/local/bin
   compile_error
   strip $COIN_DAEMON $COIN_CLI
   cd - >/dev/null 2>&1
@@ -157,20 +157,13 @@ externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 #Addnodes
-
-addnode=polispay.org
-addnode=node1.polispay.org
-addnode=node2.polispay.org
-addnode=46.101.32.72:24126
-addnode=144.202.19.190:24126
-addnode=207.148.5.135:24126
-addnode=89.47.165.165:24126
-addnode=62.75.139.140:24126
-addnode=207.148.5.135:24126
-addnode=209.250.245.66:24126
-addnode=199.247.3.98:24126
-addnode=199.247.29.65:24126
-addnode=45.32.149.254:24126
+addnode=node1.azartpay.com
+addnode=node2.azartpay.com
+addnode=5.9.6.17:9799
+addnode=5.9.73.81:9799
+addnode=176.9.121.219:9799
+addnode=176.9.70.106:9799
+addnode=80.87.197.195:9799
 EOF
 }
 
@@ -268,7 +261,7 @@ clear
 function important_information() {
  echo
  echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${PURPLE}Windows Wallet Guide. https://github.com/Realbityoda/Polis/blob/master/README.md${NC}"
+ echo -e "${PURPLE}Windows Wallet Guide. https://github.com/azartpay/azart-masternode/blob/master/README.md${NC}"
  echo -e "${BLUE}================================================================================================================================${NC}"
  echo -e "$COIN_NAME Masternode is up and running listening on port ${GREEN}$COIN_PORT${NC}."
  echo -e "Configuration file is: ${RED}$CONFIGFOLDER/$CONFIG_FILE${NC}"
@@ -282,13 +275,6 @@ function important_information() {
  echo -e "${RED}Sentinel${NC} is installed in ${RED}/root/sentinel_$COIN_NAME${NC}"
  echo -e "Sentinel logs is: ${RED}$CONFIGFOLDER/sentinel.log${NC}"
  fi
- echo -e "${BLUE}================================================================================================================================"
- echo -e "${CYAN}Follow twitter to stay updated.  https://twitter.com/Real_Bit_Yoda${NC}"
- echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${GREEN}Donations accepted but never required.${NC}"
- echo -e "${BLUE}================================================================================================================================${NC}"
- echo -e "${YELLOW}POLIS: PCLvLJB5tDDH6ekqpavjXfi33YJAzXLqKb${NC}"
- echo -e "${BLUE}================================================================================================================================${NC}"
 }
 
 function setup_node() {
