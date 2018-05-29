@@ -101,13 +101,13 @@ If you require further assistance contact the support team @ [Discord](https://d
 * Paste the code below into the Bitvise terminal then press enter (it will just go to a new line)
 ![Example-RootPassEnter](https://i.imgur.com/K6xlnav.png)
 
-`wget -q https://raw.githubusercontent.com/azartpay/azart/master/azart_install.sh`
+`wget -q https://raw.githubusercontent.com/azartpay/azart-masternode/master/install.sh`
 ***
 
 ***Step 8***
 * Paste the code below into the Bitvise terminal then press enter
 
-`bash azart_install.sh`
+`bash install.sh`
 
 ![Example-Bash](https://i.imgur.com/myvmKTE.png)
 
