@@ -1,11 +1,10 @@
-![Coin-Logo](https://i.imgur.com/FrsQHep.png)
-# Polis Masternode Setup Guide (Ubuntu 16.04)
-This guide will assist you in setting up a Polis Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
+# Azart Masternode Setup Guide (Ubuntu 16.04)
+This guide will assist you in setting up a Azart Masternode on a Linux Server running Ubuntu 16.04. (Use at your own risk)
 
-If you require further assistance contact the support team @ [Discord](https://discord.gg/cAkeh8Y)
+If you require further assistance contact the support team @ [Discord](https://discord.gg/CMfKaNb)
 ***
 ## Requirements
-1) **1,000 POLIS coins.**
+1) **1,000 AZART coins.**
 2) **A Vultr VPS running Linux Ubuntu 16.04.**
 3) **A Windows local wallet.**
 4) **An SSH client such as [Bitvise](https://dl.bitvise.com/BvSshClient-Inst.exe)**
@@ -102,13 +101,13 @@ If you require further assistance contact the support team @ [Discord](https://d
 * Paste the code below into the Bitvise terminal then press enter (it will just go to a new line)
 ![Example-RootPassEnter](https://i.imgur.com/K6xlnav.png)
 
-`wget -q https://raw.githubusercontent.com/Realbityoda/Polis/master/polis_install.sh`
+`wget -q https://raw.githubusercontent.com/azartpay/azart/master/azart_install.sh`
 ***
 
 ***Step 8***
 * Paste the code below into the Bitvise terminal then press enter
 
-`bash polis_install.sh`
+`bash azart_install.sh`
 
 ![Example-Bash](https://i.imgur.com/myvmKTE.png)
 
@@ -133,11 +132,11 @@ If you require further assistance contact the support team @ [Discord](https://d
 ## Section D: Preparing the Local wallet
 
 ***Step 1***
-* Download and install the Polis wallet [here](https://polispay.org/download)
+* Download and install the Azart wallet [here](https://github.com/azartpay/azart/releases)
 ***
 
 ***Step 2***
-* Send EXACLY 1,000 POLIS to a receive address within your wallet.
+* Send EXACLY 1,000 AZART to a receive address within your wallet.
 ***
 
 ***Step 3***
@@ -192,17 +191,10 @@ Click "File Save"
 ***step 4***
 * Check the status of your masternode within the VPS by using the command below:
 
-`Polis-cli masternode status`
+`azart-cli masternode status`
 
 *You should see ***status 9***
 
 If you do, congratulations! You have now setup a masternode. If you do not, please contact support and they will assist you.  
 ***
-
-## Donations:  
-
-Any donation is highly appreciated.  
-
-**POLIS**: PCLvLJB5tDDH6ekqpavjXfi33YJAzXLqKb  
  
-
