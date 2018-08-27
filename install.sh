@@ -5,7 +5,7 @@ CONFIG_FILE='azart.conf'
 CONFIGFOLDER='/root/.azartcore'
 COIN_DAEMON='/usr/local/bin/azartd'
 COIN_CLI='/usr/local/bin/azart-cli'
-COIN_REPO='https://github.com/azartpay/azart/releases/download/0.12.3.4/azart-0.12.3.4-linux-x64.tgz'
+COIN_REPO='https://github.com/azartpay/azart/releases/download/0.12.4.1/azart-0.12.4.1-linux-x64.tgz'
 COIN_ZIP=$(echo $COIN_TGZ | awk -F'/' '{print $NF}')
 SENTINEL_REPO='https://github.com/azartpay/azart-sentinel'
 COIN_NAME='Azart'
@@ -156,13 +156,23 @@ externalip=$NODEIP:$COIN_PORT
 masternodeprivkey=$COINKEY
 
 #Addnodes
-addnode=node1.azartpay.com
-addnode=node2.azartpay.com
-addnode=5.9.6.17:9799
-addnode=5.9.73.81:9799
-addnode=176.9.121.219:9799
 addnode=176.9.70.106:9799
-addnode=80.87.197.195:9799
+addnode=5.9.73.81:9799
+addnode=5.9.6.17:9799
+addnode=176.9.121.219:9799
+addnode=5.188.204.38:9799
+addnode=5.188.204.37:9799
+addnode=5.188.204.36:9799
+addnode=5.188.204.35:9799
+addnode=5.188.204.34:9799
+addnode=5.188.204.33:9799
+addnode=5.188.204.32:9799
+addnode=5.188.204.31:9799
+addnode=5.188.204.30:9799
+addnode=5.188.204.29:9799
+addnode=5.188.204.28:9799
+addnode=5.188.204.27:9799
+addnode=5.188.204.6:9799
 EOF
 }
 
